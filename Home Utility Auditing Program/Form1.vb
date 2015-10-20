@@ -1,4 +1,8 @@
-﻿Public Class Form1
+﻿'Created by: Jacob Shay'
+'October 20th, 2015'
+
+
+Public Class Form1
     Dim kilowatts As Double
     Dim pricePerKilo As Double
     Dim hoursOfOperation As Double
