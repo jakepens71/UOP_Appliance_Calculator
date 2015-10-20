@@ -1,0 +1,10 @@
+c:\users\jshay\documents\visual studio 2012\Projects\Home Utility Auditing Program\Home Utility Auditing Program\bin\Debug\Home Utility Auditing Program.exe.config
+c:\users\jshay\documents\visual studio 2012\Projects\Home Utility Auditing Program\Home Utility Auditing Program\bin\Debug\Home Utility Auditing Program.exe
+c:\users\jshay\documents\visual studio 2012\Projects\Home Utility Auditing Program\Home Utility Auditing Program\bin\Debug\Home Utility Auditing Program.pdb
+c:\users\jshay\documents\visual studio 2012\Projects\Home Utility Auditing Program\Home Utility Auditing Program\bin\Debug\Home Utility Auditing Program.xml
+c:\users\jshay\documents\visual studio 2012\Projects\Home Utility Auditing Program\Home Utility Auditing Program\obj\Debug\Home_Utility_Auditing_Program.Form1.resources
+c:\users\jshay\documents\visual studio 2012\Projects\Home Utility Auditing Program\Home Utility Auditing Program\obj\Debug\Home_Utility_Auditing_Program.Resources.resources
+c:\users\jshay\documents\visual studio 2012\Projects\Home Utility Auditing Program\Home Utility Auditing Program\obj\Debug\Home Utility Auditing Program.vbproj.GenerateResource.Cache
+c:\users\jshay\documents\visual studio 2012\Projects\Home Utility Auditing Program\Home Utility Auditing Program\obj\Debug\Home Utility Auditing Program.exe
+c:\users\jshay\documents\visual studio 2012\Projects\Home Utility Auditing Program\Home Utility Auditing Program\obj\Debug\Home Utility Auditing Program.xml
+c:\users\jshay\documents\visual studio 2012\Projects\Home Utility Auditing Program\Home Utility Auditing Program\obj\Debug\Home Utility Auditing Program.pdb
