@@ -26,7 +26,6 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtKiloWattHourPrice = New System.Windows.Forms.TextBox()
         Me.lblAppliance = New System.Windows.Forms.Label()
-        Me.btnCalculate = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtPowerNeeded = New System.Windows.Forms.TextBox()
         Me.lblAnswer = New System.Windows.Forms.Label()
@@ -36,6 +35,7 @@ Partial Class Form1
         '
         'comBoxApplianceSelect
         '
+        Me.comBoxApplianceSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comBoxApplianceSelect.FormattingEnabled = True
         Me.comBoxApplianceSelect.Items.AddRange(New Object() {"Refrigerator", "TV", "Space Heater", "Fan", "Dryer", "Oven"})
         Me.comBoxApplianceSelect.Location = New System.Drawing.Point(384, 87)
@@ -68,23 +68,14 @@ Partial Class Form1
         Me.lblAppliance.TabIndex = 3
         Me.lblAppliance.Text = "Appliance"
         '
-        'btnCalculate
-        '
-        Me.btnCalculate.Location = New System.Drawing.Point(266, 397)
-        Me.btnCalculate.Name = "btnCalculate"
-        Me.btnCalculate.Size = New System.Drawing.Size(75, 23)
-        Me.btnCalculate.TabIndex = 4
-        Me.btnCalculate.Text = "Calculate"
-        Me.btnCalculate.UseVisualStyleBackColor = True
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(78, 165)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(101, 13)
+        Me.Label2.Size = New System.Drawing.Size(92, 13)
         Me.Label2.TabIndex = 5
-        Me.Label2.Text = "Power need in kWh"
+        Me.Label2.Text = "Power need in kw"
         '
         'txtPowerNeeded
         '
@@ -127,7 +118,6 @@ Partial Class Form1
         Me.Controls.Add(Me.lblAnswer)
         Me.Controls.Add(Me.txtPowerNeeded)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.btnCalculate)
         Me.Controls.Add(Me.lblAppliance)
         Me.Controls.Add(Me.txtKiloWattHourPrice)
         Me.Controls.Add(Me.Label1)
@@ -142,7 +132,6 @@ Partial Class Form1
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents txtKiloWattHourPrice As System.Windows.Forms.TextBox
     Friend WithEvents lblAppliance As System.Windows.Forms.Label
-    Friend WithEvents btnCalculate As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents txtPowerNeeded As System.Windows.Forms.TextBox
     Friend WithEvents lblAnswer As System.Windows.Forms.Label
