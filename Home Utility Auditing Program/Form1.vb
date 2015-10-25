@@ -24,7 +24,7 @@ Public Class Form1
         'If all out textboxes have valid data then we will call the function to calculate the price'
         If txtHoursOfOperation.Text <> "" And txtKiloWattHourPrice.Text <> "" And txtPowerNeeded.Text <> "" And comBoxApplianceSelect.Text <> "" Then
             answer = findCostOfAppliance(pricePerKilo, kilowatts, hoursOfOperation)
-            lblAnswer.Text = "It would cost $" + answer.ToString + " to run " + appliance.ToString + " For " + txtHoursOfOperation.Text.ToString + " hour(s)."
+            lblAnswer.Text = "It would cost $" + answer.ToString + " to run a " + appliance.ToString + " For " + txtHoursOfOperation.Text.ToString + " hour(s)."
         End If
 
     End Sub
@@ -44,7 +44,7 @@ Public Class Form1
                 'Get pricePerKil from textbox'
                 pricePerKilo = txtKiloWattHourPrice.Text
             Else
-                MessageBox.Show("That is not a numerica Value")
+                MessageBox.Show("That is not a numeric Value")
                 txtKiloWattHourPrice.Text = ""
             End If
         End If
@@ -52,7 +52,7 @@ Public Class Form1
         'If all out textboxes have valid data then we will call the function to calculate the price'
         If txtHoursOfOperation.Text <> "" And txtKiloWattHourPrice.Text <> "" And txtPowerNeeded.Text <> "" And comBoxApplianceSelect.Text <> "" Then
             answer = findCostOfAppliance(pricePerKilo, kilowatts, hoursOfOperation)
-            lblAnswer.Text = "It would cost $" + answer.ToString + " to run " + appliance.ToString + " For " + txtHoursOfOperation.Text.ToString + " hour(s)."
+            lblAnswer.Text = "It would cost $" + answer.ToString + " to run a " + appliance.ToString + " For " + txtHoursOfOperation.Text.ToString + " hour(s)."
         End If
 
     End Sub
@@ -71,7 +71,7 @@ Public Class Form1
                 kilowatts = txtPowerNeeded.Text
             Else
                 'If the number is not numeric we want to make sure the user knows that and then reset the textbox value'
-                MessageBox.Show("That is not a numerica Value")
+                MessageBox.Show("That is not a numeric Value")
                 'Reset the text box to empty strings'
                 txtPowerNeeded.Text = ""
             End If
@@ -80,7 +80,7 @@ Public Class Form1
         'If all out textboxes have valid data then we will call the function to calculate the price'
         If txtHoursOfOperation.Text <> "" And txtKiloWattHourPrice.Text <> "" And txtPowerNeeded.Text <> "" And comBoxApplianceSelect.Text <> "" Then
             answer = findCostOfAppliance(pricePerKilo, kilowatts, hoursOfOperation)
-            lblAnswer.Text = "It would cost $" + answer.ToString + " to run " + appliance.ToString + " For " + txtHoursOfOperation.Text.ToString + " hour(s)."
+            lblAnswer.Text = "It would cost $" + answer.ToString + " to run a " + appliance.ToString + " For " + txtHoursOfOperation.Text.ToString + " hour(s)."
         End If
 
     End Sub
@@ -106,7 +106,7 @@ Public Class Form1
         'If all out textboxes have valid data then we will call the function to calculate the price'
         If txtHoursOfOperation.Text <> "" And txtKiloWattHourPrice.Text <> "" And txtPowerNeeded.Text <> "" And comBoxApplianceSelect.Text <> "" Then
             answer = findCostOfAppliance(pricePerKilo, kilowatts, hoursOfOperation)
-            lblAnswer.Text = "It would cost $" + answer.ToString + " to run " + appliance.ToString + " For " + txtHoursOfOperation.Text.ToString + " hour(s)."
+            lblAnswer.Text = "It would cost $" + answer.ToString + " to run a " + appliance.ToString + " For " + txtHoursOfOperation.Text.ToString + " hour(s)."
         End If
 
     End Sub
@@ -123,4 +123,9 @@ Public Class Form1
         Return finalPrice
     End Function
 
+    Private Sub btnCalculate_Click(sender As Object, e As EventArgs)
+        If txtHoursOfOperation.Text = "" Or txtKiloWattHourPrice.Text = "" Or txtPowerNeeded.Text = "" Then
+            MessageBox.Show("Not all values are bound")
+        End If
+    End Sub
 End Class
