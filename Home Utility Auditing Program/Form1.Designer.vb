@@ -31,13 +31,17 @@ Partial Class Form1
         Me.lblAnswer = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtHoursOfOperation = New System.Windows.Forms.TextBox()
+        Me.lblGallonsOfWater = New System.Windows.Forms.Label()
+        Me.txtGallonsOfWater = New System.Windows.Forms.TextBox()
+        Me.txtPricePerGallon = New System.Windows.Forms.TextBox()
+        Me.lblPricePerGallon = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'comBoxApplianceSelect
         '
         Me.comBoxApplianceSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comBoxApplianceSelect.FormattingEnabled = True
-        Me.comBoxApplianceSelect.Items.AddRange(New Object() {"Refrigerator", "TV", "Space Heater", "Fan", "Dryer", "Oven"})
+        Me.comBoxApplianceSelect.Items.AddRange(New Object() {"Refrigerator", "TV", "Space Heater", "Fan", "Dryer", "Oven", "Laundry Washer", "Cloth Washer"})
         Me.comBoxApplianceSelect.Location = New System.Drawing.Point(384, 87)
         Me.comBoxApplianceSelect.Name = "comBoxApplianceSelect"
         Me.comBoxApplianceSelect.Size = New System.Drawing.Size(121, 21)
@@ -108,11 +112,51 @@ Partial Class Form1
         Me.txtHoursOfOperation.Size = New System.Drawing.Size(100, 20)
         Me.txtHoursOfOperation.TabIndex = 9
         '
+        'lblGallonsOfWater
+        '
+        Me.lblGallonsOfWater.AutoSize = True
+        Me.lblGallonsOfWater.Location = New System.Drawing.Point(50, 207)
+        Me.lblGallonsOfWater.Name = "lblGallonsOfWater"
+        Me.lblGallonsOfWater.Size = New System.Drawing.Size(120, 13)
+        Me.lblGallonsOfWater.TabIndex = 10
+        Me.lblGallonsOfWater.Text = "Gallons of Water / Hour"
+        Me.lblGallonsOfWater.Visible = False
+        '
+        'txtGallonsOfWater
+        '
+        Me.txtGallonsOfWater.Location = New System.Drawing.Point(186, 207)
+        Me.txtGallonsOfWater.Name = "txtGallonsOfWater"
+        Me.txtGallonsOfWater.Size = New System.Drawing.Size(100, 20)
+        Me.txtGallonsOfWater.TabIndex = 11
+        Me.txtGallonsOfWater.Visible = False
+        '
+        'txtPricePerGallon
+        '
+        Me.txtPricePerGallon.Location = New System.Drawing.Point(426, 207)
+        Me.txtPricePerGallon.Name = "txtPricePerGallon"
+        Me.txtPricePerGallon.Size = New System.Drawing.Size(100, 20)
+        Me.txtPricePerGallon.TabIndex = 12
+        Me.txtPricePerGallon.Visible = False
+        '
+        'lblPricePerGallon
+        '
+        Me.lblPricePerGallon.AutoSize = True
+        Me.lblPricePerGallon.Location = New System.Drawing.Point(324, 207)
+        Me.lblPricePerGallon.Name = "lblPricePerGallon"
+        Me.lblPricePerGallon.Size = New System.Drawing.Size(72, 13)
+        Me.lblPricePerGallon.TabIndex = 13
+        Me.lblPricePerGallon.Text = "Price / Gallon"
+        Me.lblPricePerGallon.Visible = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(695, 452)
+        Me.Controls.Add(Me.lblPricePerGallon)
+        Me.Controls.Add(Me.txtPricePerGallon)
+        Me.Controls.Add(Me.txtGallonsOfWater)
+        Me.Controls.Add(Me.lblGallonsOfWater)
         Me.Controls.Add(Me.txtHoursOfOperation)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.lblAnswer)
@@ -137,5 +181,8 @@ Partial Class Form1
     Friend WithEvents lblAnswer As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents txtHoursOfOperation As System.Windows.Forms.TextBox
-
+    Friend WithEvents lblGallonsOfWater As Label
+    Friend WithEvents txtGallonsOfWater As TextBox
+    Friend WithEvents txtPricePerGallon As TextBox
+    Friend WithEvents lblPricePerGallon As Label
 End Class
