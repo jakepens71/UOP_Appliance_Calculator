@@ -191,6 +191,14 @@ Public Class Form1
 
         listOfAppliances.Add(newAppliance)
 
+        lstViewAppliances.Clear()
+
+
+
+        For index As Integer = 0 To listOfAppliances.Count - 1
+            lstViewAppliances.Items.Add(listOfAppliances(index).nameOfAppliance)
+        Next
+
         'Return the answer'
         Return finalPrice
     End Function

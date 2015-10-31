@@ -35,6 +35,10 @@ Partial Class Form1
         Me.txtGallonsOfWater = New System.Windows.Forms.TextBox()
         Me.txtPricePerGallon = New System.Windows.Forms.TextBox()
         Me.lblPricePerGallon = New System.Windows.Forms.Label()
+        Me.lstViewAppliances = New System.Windows.Forms.ListView()
+        Me.applianceName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.applianceCost = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.applianceHours = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.SuspendLayout()
         '
         'comBoxApplianceSelect
@@ -148,11 +152,33 @@ Partial Class Form1
         Me.lblPricePerGallon.Text = "Price / Gallon"
         Me.lblPricePerGallon.Visible = False
         '
+        'lstViewAppliances
+        '
+        Me.lstViewAppliances.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.applianceName, Me.applianceCost, Me.applianceHours})
+        Me.lstViewAppliances.Location = New System.Drawing.Point(186, 264)
+        Me.lstViewAppliances.Name = "lstViewAppliances"
+        Me.lstViewAppliances.Size = New System.Drawing.Size(340, 137)
+        Me.lstViewAppliances.TabIndex = 14
+        Me.lstViewAppliances.UseCompatibleStateImageBehavior = False
+        '
+        'applianceName
+        '
+        Me.applianceName.Text = "Appliance"
+        '
+        'applianceCost
+        '
+        Me.applianceCost.Text = "Cost"
+        '
+        'applianceHours
+        '
+        Me.applianceHours.Text = "Hours of Operation"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(695, 452)
+        Me.Controls.Add(Me.lstViewAppliances)
         Me.Controls.Add(Me.lblPricePerGallon)
         Me.Controls.Add(Me.txtPricePerGallon)
         Me.Controls.Add(Me.txtGallonsOfWater)
@@ -185,4 +211,8 @@ Partial Class Form1
     Friend WithEvents txtGallonsOfWater As TextBox
     Friend WithEvents txtPricePerGallon As TextBox
     Friend WithEvents lblPricePerGallon As Label
+    Friend WithEvents lstViewAppliances As ListView
+    Friend WithEvents applianceName As ColumnHeader
+    Friend WithEvents applianceCost As ColumnHeader
+    Friend WithEvents applianceHours As ColumnHeader
 End Class
