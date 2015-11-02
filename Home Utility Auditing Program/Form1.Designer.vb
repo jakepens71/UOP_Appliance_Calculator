@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form1
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.comBoxApplianceSelect = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -35,10 +35,12 @@ Partial Class Form1
         Me.txtGallonsOfWater = New System.Windows.Forms.TextBox()
         Me.txtPricePerGallon = New System.Windows.Forms.TextBox()
         Me.lblPricePerGallon = New System.Windows.Forms.Label()
-        Me.lstViewAppliances = New System.Windows.Forms.ListView()
-        Me.applianceName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.applianceCost = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.applianceHours = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.lstOfAppliances = New System.Windows.Forms.DataGridView()
+        Me.ApplianceName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.HoursUsed = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CostAppliance = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnClear = New System.Windows.Forms.Button()
+        CType(Me.lstOfAppliances, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'comBoxApplianceSelect
@@ -95,7 +97,7 @@ Partial Class Form1
         'lblAnswer
         '
         Me.lblAnswer.AutoSize = True
-        Me.lblAnswer.Location = New System.Drawing.Point(186, 304)
+        Me.lblAnswer.Location = New System.Drawing.Point(526, 504)
         Me.lblAnswer.Name = "lblAnswer"
         Me.lblAnswer.Size = New System.Drawing.Size(0, 13)
         Me.lblAnswer.TabIndex = 7
@@ -152,33 +154,48 @@ Partial Class Form1
         Me.lblPricePerGallon.Text = "Price / Gallon"
         Me.lblPricePerGallon.Visible = False
         '
-        'lstViewAppliances
+        'lstOfAppliances
         '
-        Me.lstViewAppliances.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.applianceName, Me.applianceCost, Me.applianceHours})
-        Me.lstViewAppliances.Location = New System.Drawing.Point(186, 264)
-        Me.lstViewAppliances.Name = "lstViewAppliances"
-        Me.lstViewAppliances.Size = New System.Drawing.Size(340, 137)
-        Me.lstViewAppliances.TabIndex = 14
-        Me.lstViewAppliances.UseCompatibleStateImageBehavior = False
+        Me.lstOfAppliances.AllowUserToAddRows = False
+        Me.lstOfAppliances.AllowUserToDeleteRows = False
+        Me.lstOfAppliances.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.lstOfAppliances.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ApplianceName, Me.HoursUsed, Me.CostAppliance})
+        Me.lstOfAppliances.Location = New System.Drawing.Point(159, 300)
+        Me.lstOfAppliances.Name = "lstOfAppliances"
+        Me.lstOfAppliances.Size = New System.Drawing.Size(367, 150)
+        Me.lstOfAppliances.TabIndex = 14
         '
-        'applianceName
+        'ApplianceName
         '
-        Me.applianceName.Text = "Appliance"
+        Me.ApplianceName.HeaderText = "Appliance"
+        Me.ApplianceName.Name = "ApplianceName"
         '
-        'applianceCost
+        'HoursUsed
         '
-        Me.applianceCost.Text = "Cost"
+        Me.HoursUsed.HeaderText = "Hours Used"
+        Me.HoursUsed.Name = "HoursUsed"
         '
-        'applianceHours
+        'CostAppliance
         '
-        Me.applianceHours.Text = "Hours of Operation"
+        Me.CostAppliance.HeaderText = "Cost"
+        Me.CostAppliance.Name = "CostAppliance"
+        '
+        'btnClear
+        '
+        Me.btnClear.Location = New System.Drawing.Point(426, 261)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(75, 23)
+        Me.btnClear.TabIndex = 15
+        Me.btnClear.Text = "Clear"
+        Me.btnClear.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(695, 452)
-        Me.Controls.Add(Me.lstViewAppliances)
+        Me.ClientSize = New System.Drawing.Size(775, 575)
+        Me.Controls.Add(Me.btnClear)
+        Me.Controls.Add(Me.lstOfAppliances)
         Me.Controls.Add(Me.lblPricePerGallon)
         Me.Controls.Add(Me.txtPricePerGallon)
         Me.Controls.Add(Me.txtGallonsOfWater)
@@ -194,6 +211,7 @@ Partial Class Form1
         Me.Controls.Add(Me.comBoxApplianceSelect)
         Me.Name = "Form1"
         Me.Text = "Form1"
+        CType(Me.lstOfAppliances, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -211,8 +229,9 @@ Partial Class Form1
     Friend WithEvents txtGallonsOfWater As TextBox
     Friend WithEvents txtPricePerGallon As TextBox
     Friend WithEvents lblPricePerGallon As Label
-    Friend WithEvents lstViewAppliances As ListView
-    Friend WithEvents applianceName As ColumnHeader
-    Friend WithEvents applianceCost As ColumnHeader
-    Friend WithEvents applianceHours As ColumnHeader
+    Friend WithEvents lstOfAppliances As DataGridView
+    Friend WithEvents ApplianceName As DataGridViewTextBoxColumn
+    Friend WithEvents HoursUsed As DataGridViewTextBoxColumn
+    Friend WithEvents CostAppliance As DataGridViewTextBoxColumn
+    Friend WithEvents btnClear As Button
 End Class

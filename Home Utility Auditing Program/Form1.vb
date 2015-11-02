@@ -16,6 +16,7 @@ Public Class Form1
     Dim pricePerGallon As Double
     Dim newAppliance As New Appliances()
     Dim listOfAppliances As New List(Of Appliances)
+    Dim totalCost As Double = 0
 
 
 
@@ -48,14 +49,13 @@ Public Class Form1
         If comBoxApplianceSelect.Text = "Cloth Washer" Or comBoxApplianceSelect.Text = "Laundry Washer" Then
             'If all out textboxes have valid data then we will call the function to calculate the price'
             If txtHoursOfOperation.Text <> "" And txtKiloWattHourPrice.Text <> "" And txtPowerNeeded.Text <> "" And txtGallonsOfWater.Text <> "" And txtPricePerGallon.Text <> "" Then
-                answer = findCostOfAppliance(pricePerKilo, kilowatts, hoursOfOperation, gallonsOfWater, pricePerGallon)
-                lblAnswer.Text = "It would cost $" + answer.ToString + " to run a " + appliance.ToString + " For " + txtHoursOfOperation.Text.ToString + " hour(s)."
+                findCostOfAppliance(pricePerKilo, kilowatts, hoursOfOperation, gallonsOfWater, pricePerGallon)
             End If
         Else
             'If all out textboxes have valid data then we will call the function to calculate the price'
             If txtHoursOfOperation.Text <> "" And txtKiloWattHourPrice.Text <> "" And txtPowerNeeded.Text <> "" And comBoxApplianceSelect.Text <> "" Then
-                answer = findCostOfAppliance(pricePerKilo, kilowatts, hoursOfOperation, gallonsOfWater, pricePerGallon)
-                lblAnswer.Text = "It would cost $" + answer.ToString + " to run a " + appliance.ToString + " For " + txtHoursOfOperation.Text.ToString + " hour(s)."
+                findCostOfAppliance(pricePerKilo, kilowatts, hoursOfOperation, gallonsOfWater, pricePerGallon)
+
             End If
         End If
 
@@ -87,14 +87,14 @@ Public Class Form1
         If comBoxApplianceSelect.Text = "Cloth Washer" Or comBoxApplianceSelect.Text = "Laundry Washer" Then
             'If all out textboxes have valid data then we will call the function to calculate the price'
             If txtHoursOfOperation.Text <> "" And txtKiloWattHourPrice.Text <> "" And txtPowerNeeded.Text <> "" And txtGallonsOfWater.Text <> "" And txtPricePerGallon.Text <> "" Then
-                answer = findCostOfAppliance(pricePerKilo, kilowatts, hoursOfOperation, gallonsOfWater, pricePerGallon)
-                lblAnswer.Text = "It would cost $" + answer.ToString + " to run a " + appliance.ToString + " For " + txtHoursOfOperation.Text.ToString + " hour(s)."
+                findCostOfAppliance(pricePerKilo, kilowatts, hoursOfOperation, gallonsOfWater, pricePerGallon)
+
             End If
         Else
             'If all out textboxes have valid data then we will call the function to calculate the price'
             If txtHoursOfOperation.Text <> "" And txtKiloWattHourPrice.Text <> "" And txtPowerNeeded.Text <> "" And comBoxApplianceSelect.Text <> "" Then
-                answer = findCostOfAppliance(pricePerKilo, kilowatts, hoursOfOperation, gallonsOfWater, pricePerGallon)
-                lblAnswer.Text = "It would cost $" + answer.ToString + " to run a " + appliance.ToString + " For " + txtHoursOfOperation.Text.ToString + " hour(s)."
+                findCostOfAppliance(pricePerKilo, kilowatts, hoursOfOperation, gallonsOfWater, pricePerGallon)
+
             End If
         End If
 
@@ -123,14 +123,14 @@ Public Class Form1
         If comBoxApplianceSelect.Text = "Cloth Washer" Or comBoxApplianceSelect.Text = "Laundry Washer" Then
             'If all out textboxes have valid data then we will call the function to calculate the price'
             If txtHoursOfOperation.Text <> "" And txtKiloWattHourPrice.Text <> "" And txtPowerNeeded.Text <> "" And txtGallonsOfWater.Text <> "" And txtPricePerGallon.Text <> "" Then
-                answer = findCostOfAppliance(pricePerKilo, kilowatts, hoursOfOperation, gallonsOfWater, pricePerGallon)
-                lblAnswer.Text = "It would cost $" + answer.ToString + " to run a " + appliance.ToString + " For " + txtHoursOfOperation.Text.ToString + " hour(s)."
+                findCostOfAppliance(pricePerKilo, kilowatts, hoursOfOperation, gallonsOfWater, pricePerGallon)
+
             End If
         Else
             'If all out textboxes have valid data then we will call the function to calculate the price'
             If txtHoursOfOperation.Text <> "" And txtKiloWattHourPrice.Text <> "" And txtPowerNeeded.Text <> "" And comBoxApplianceSelect.Text <> "" Then
-                answer = findCostOfAppliance(pricePerKilo, kilowatts, hoursOfOperation, gallonsOfWater, pricePerGallon)
-                lblAnswer.Text = "It would cost $" + answer.ToString + " to run a " + appliance.ToString + " For " + txtHoursOfOperation.Text.ToString + " hour(s)."
+                findCostOfAppliance(pricePerKilo, kilowatts, hoursOfOperation, gallonsOfWater, pricePerGallon)
+
             End If
         End If
 
@@ -157,20 +157,20 @@ Public Class Form1
         If comBoxApplianceSelect.Text = "Cloth Washer" Or comBoxApplianceSelect.Text = "Laundry Washer" Then
             'If all out textboxes have valid data then we will call the function to calculate the price'
             If txtHoursOfOperation.Text <> "" And txtKiloWattHourPrice.Text <> "" And txtPowerNeeded.Text <> "" And txtGallonsOfWater.Text <> "" And txtPricePerGallon.Text <> "" Then
-                answer = findCostOfAppliance(pricePerKilo, kilowatts, hoursOfOperation, gallonsOfWater, pricePerGallon)
-                lblAnswer.Text = "It would cost $" + answer.ToString + " to run a " + appliance.ToString + " For " + txtHoursOfOperation.Text.ToString + " hour(s)."
+                findCostOfAppliance(pricePerKilo, kilowatts, hoursOfOperation, gallonsOfWater, pricePerGallon)
+
             End If
         Else
             'If all out textboxes have valid data then we will call the function to calculate the price'
             If txtHoursOfOperation.Text <> "" And txtKiloWattHourPrice.Text <> "" And txtPowerNeeded.Text <> "" And comBoxApplianceSelect.Text <> "" Then
-                answer = findCostOfAppliance(pricePerKilo, kilowatts, hoursOfOperation, gallonsOfWater, pricePerGallon)
-                lblAnswer.Text = "It would cost $" + answer.ToString + " to run a " + appliance.ToString + " For " + txtHoursOfOperation.Text.ToString + " hour(s)."
+                findCostOfAppliance(pricePerKilo, kilowatts, hoursOfOperation, gallonsOfWater, pricePerGallon)
+
             End If
         End If
 
     End Sub
 
-    Function findCostOfAppliance(ByVal pricePerKilo As Double, ByVal kilowatts As Double, ByVal hoursOfOperation As Double, ByVal gallonsOfWater As Double, ByVal pricePerGallon As Double)
+    Sub findCostOfAppliance(ByVal pricePerKilo As Double, ByVal kilowatts As Double, ByVal hoursOfOperation As Double, ByVal gallonsOfWater As Double, ByVal pricePerGallon As Double)
 
         'Calculate the kilo wat per hour by multyplying the number of kilowats by the number of hours it was ran'
         kilWattPerHour = hoursOfOperation * kilowatts
@@ -191,17 +191,19 @@ Public Class Form1
 
         listOfAppliances.Add(newAppliance)
 
-        lstViewAppliances.Clear()
 
 
+        lblAnswer.Text = ""
 
         For index As Integer = 0 To listOfAppliances.Count - 1
-            lstViewAppliances.Items.Add(listOfAppliances(index).nameOfAppliance)
+            lstOfAppliances.Rows.Add(listOfAppliances(index).nameOfAppliance, listOfAppliances(index).hoursUsedAppliance, listOfAppliances(index).costOfAppliance)
+            totalCost = totalCost + listOfAppliances(index).costOfAppliance
         Next
 
-        'Return the answer'
-        Return finalPrice
-    End Function
+        lblAnswer.Text = "Total Cost: $" + totalCost.ToString()
+
+
+    End Sub
 
     Private Sub btnCalculate_Click(sender As Object, e As EventArgs)
         If txtHoursOfOperation.Text = "" Or txtKiloWattHourPrice.Text = "" Or txtPowerNeeded.Text = "" Then
@@ -232,14 +234,13 @@ Public Class Form1
         If comBoxApplianceSelect.Text = "Cloth Washer" Or comBoxApplianceSelect.Text = "Laundry Washer" Then
             'If all out textboxes have valid data then we will call the function to calculate the price'
             If txtHoursOfOperation.Text <> "" And txtKiloWattHourPrice.Text <> "" And txtPowerNeeded.Text <> "" And txtGallonsOfWater.Text <> "" And txtPricePerGallon.Text <> "" Then
-                answer = findCostOfAppliance(pricePerKilo, kilowatts, hoursOfOperation, gallonsOfWater, pricePerGallon)
-                lblAnswer.Text = "It would cost $" + answer.ToString + " to run a " + appliance.ToString + " For " + txtHoursOfOperation.Text.ToString + " hour(s)."
+                findCostOfAppliance(pricePerKilo, kilowatts, hoursOfOperation, gallonsOfWater, pricePerGallon)
+
             End If
         Else
             'If all out textboxes have valid data then we will call the function to calculate the price'
             If txtHoursOfOperation.Text <> "" And txtKiloWattHourPrice.Text <> "" And txtPowerNeeded.Text <> "" And comBoxApplianceSelect.Text <> "" Then
-                answer = findCostOfAppliance(pricePerKilo, kilowatts, hoursOfOperation, gallonsOfWater, pricePerGallon)
-                lblAnswer.Text = "It would cost $" + answer.ToString + " to run a " + appliance.ToString + " For " + txtHoursOfOperation.Text.ToString + " hour(s)."
+                findCostOfAppliance(pricePerKilo, kilowatts, hoursOfOperation, gallonsOfWater, pricePerGallon)
             End If
         End If
 
@@ -266,16 +267,31 @@ Public Class Form1
         If comBoxApplianceSelect.Text = "Cloth Washer" Or comBoxApplianceSelect.Text = "Laundry Washer" Then
             'If all out textboxes have valid data then we will call the function to calculate the price'
             If txtHoursOfOperation.Text <> "" And txtKiloWattHourPrice.Text <> "" And txtPowerNeeded.Text <> "" And txtGallonsOfWater.Text <> "" And txtPricePerGallon.Text <> "" Then
-                answer = findCostOfAppliance(pricePerKilo, kilowatts, hoursOfOperation, gallonsOfWater, pricePerGallon)
-                lblAnswer.Text = "It would cost $" + answer.ToString + " to run a " + appliance.ToString + " For " + txtHoursOfOperation.Text.ToString + " hour(s)."
+                findCostOfAppliance(pricePerKilo, kilowatts, hoursOfOperation, gallonsOfWater, pricePerGallon)
+
             End If
         Else
             'If all out textboxes have valid data then we will call the function to calculate the price'
             If txtHoursOfOperation.Text <> "" And txtKiloWattHourPrice.Text <> "" And txtPowerNeeded.Text <> "" And comBoxApplianceSelect.Text <> "" Then
-                answer = findCostOfAppliance(pricePerKilo, kilowatts, hoursOfOperation, gallonsOfWater, pricePerGallon)
-                lblAnswer.Text = "It would cost $" + answer.ToString + " to run a " + appliance.ToString + " For " + txtHoursOfOperation.Text.ToString + " hour(s)."
+                findCostOfAppliance(pricePerKilo, kilowatts, hoursOfOperation, gallonsOfWater, pricePerGallon)
             End If
         End If
+
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+    End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        Dim i = 0
+
+        While i < lstOfAppliances.Rows.Count
+            lstOfAppliances.Rows.RemoveAt(i)
+        End While
+
+        lblAnswer.Text = ""
 
     End Sub
 End Class
