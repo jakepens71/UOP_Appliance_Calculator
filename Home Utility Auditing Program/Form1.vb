@@ -294,4 +294,42 @@ Public Class Form1
         lblAnswer.Text = ""
 
     End Sub
+
+    Private Sub lstOfAppliances_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles lstOfAppliances.CellContentClick
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        Dim SaveFileDialog1 As SaveFileDialog = New System.Windows.Forms.SaveFileDialog
+        SaveFileDialog1.DefaultExt = ".txt"
+        SaveFileDialog1.Filter = "Text Files | *.txt"
+        SaveFileDialog1.InitialDirectory = "desktop"
+
+        If SaveFileDialog1.ShowDialog = DialogResult.OK Then
+            Dim fileStream As System.IO.Stream = SaveFileDialog1.OpenFile()
+            Dim sw As New System.IO.StreamWriter(fileStream)
+
+            For Each row As DataGridViewRow In Me.lstOfAppliances.Rows
+                Dim line As String = String.Empty
+                For x As Integer = 0 To row.Cells.Count - 1
+                    line &= row.Cells(x).Value & ","
+                Next
+                sw.WriteLine(line.Remove(line.Length - 1, 1))
+            Next
+            sw.Flush()
+            sw.Close()
+        End If
+
+    End Sub
+
+    Private Sub btnLoad_Click(sender As Object, e As EventArgs) Handles btnLoad.Click
+        Dim openFileDialog As OpenFileDialog = New System.Windows.Forms.OpenFileDialog
+
+        If (openFileDialog.ShowDialog() = DialogResult.OK) Then
+
+        End If
+
+
+    End Sub
 End Class

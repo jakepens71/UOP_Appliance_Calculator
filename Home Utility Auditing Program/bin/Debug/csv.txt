@@ -1,0 +1,4 @@
+Appliance,Hours Used,Cost
+Dryer,1,1
+TV,1,1
+TV,1,1

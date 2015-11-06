@@ -40,6 +40,8 @@ Partial Class Form1
         Me.HoursUsed = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CostAppliance = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnClear = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnLoad = New System.Windows.Forms.Button()
         CType(Me.lstOfAppliances, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -160,9 +162,9 @@ Partial Class Form1
         Me.lstOfAppliances.AllowUserToDeleteRows = False
         Me.lstOfAppliances.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.lstOfAppliances.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ApplianceName, Me.HoursUsed, Me.CostAppliance})
-        Me.lstOfAppliances.Location = New System.Drawing.Point(159, 300)
+        Me.lstOfAppliances.Location = New System.Drawing.Point(176, 277)
         Me.lstOfAppliances.Name = "lstOfAppliances"
-        Me.lstOfAppliances.Size = New System.Drawing.Size(367, 150)
+        Me.lstOfAppliances.Size = New System.Drawing.Size(350, 150)
         Me.lstOfAppliances.TabIndex = 14
         '
         'ApplianceName
@@ -182,18 +184,38 @@ Partial Class Form1
         '
         'btnClear
         '
-        Me.btnClear.Location = New System.Drawing.Point(426, 261)
+        Me.btnClear.Location = New System.Drawing.Point(544, 277)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(75, 23)
         Me.btnClear.TabIndex = 15
         Me.btnClear.Text = "Clear"
         Me.btnClear.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(544, 333)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 16
+        Me.Button1.Text = "Export"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'btnLoad
+        '
+        Me.btnLoad.Location = New System.Drawing.Point(544, 387)
+        Me.btnLoad.Name = "btnLoad"
+        Me.btnLoad.Size = New System.Drawing.Size(75, 23)
+        Me.btnLoad.TabIndex = 17
+        Me.btnLoad.Text = "Load"
+        Me.btnLoad.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(775, 575)
+        Me.Controls.Add(Me.btnLoad)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.lstOfAppliances)
         Me.Controls.Add(Me.lblPricePerGallon)
@@ -234,4 +256,6 @@ Partial Class Form1
     Friend WithEvents HoursUsed As DataGridViewTextBoxColumn
     Friend WithEvents CostAppliance As DataGridViewTextBoxColumn
     Friend WithEvents btnClear As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents btnLoad As Button
 End Class
