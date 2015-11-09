@@ -2,6 +2,8 @@
     Dim applianceCost As Double
     Dim applianceHoursUsed As Double
     Dim applianceName As String
+    Dim costPerKiloWatt As Double
+    Dim powerNeeded As Double
 
     Public Property nameOfAppliance As String
         Get
@@ -29,6 +31,24 @@
             applianceHoursUsed = value
         End Set
 
+    End Property
+
+    Public Property costKiloWatt As Double
+        Get
+            Return costPerKiloWatt
+        End Get
+        Set(value As Double)
+            costPerKiloWatt = value
+        End Set
+    End Property
+
+    Public Property power As Double
+        Get
+            Return powerNeeded
+        End Get
+        Set(value As Double)
+            powerNeeded = value
+        End Set
     End Property
 
 

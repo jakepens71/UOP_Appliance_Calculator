@@ -188,6 +188,8 @@ Public Class Form1
         newAppliance.nameOfAppliance = appliance.ToString()
         newAppliance.hoursUsedAppliance = hoursOfOperation
         newAppliance.costOfAppliance = finalPrice
+        newAppliance.costKiloWatt = kilWattPerHour
+        newAppliance.power = kilowatts
 
         listOfAppliances.Add(newAppliance)
 
@@ -195,8 +197,13 @@ Public Class Form1
 
         lblAnswer.Text = ""
 
+
+        lstOfAppliances.DataSource = Nothing
+
+        Dim i = 0
+
         For index As Integer = 0 To listOfAppliances.Count - 1
-            lstOfAppliances.Rows.Add(listOfAppliances(index).nameOfAppliance, listOfAppliances(index).hoursUsedAppliance, listOfAppliances(index).costOfAppliance)
+            lstOfAppliances.Rows.Add(listOfAppliances(index).nameOfAppliance, listOfAppliances(index).hoursUsedAppliance, listOfAppliances(index).costKiloWatt, listOfAppliances(index).power, listOfAppliances(index).costOfAppliance)
             totalCost = totalCost + listOfAppliances(index).costOfAppliance
         Next
 
@@ -295,7 +302,13 @@ Public Class Form1
 
     End Sub
 
-    Private Sub lstOfAppliances_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles lstOfAppliances.CellContentClick
+    Private Sub dataGridView1_CellClick(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles lstOfAppliances.CellClick
+
+
+    End Sub
+
+    Private Sub lstOfAppliances_SelectionChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lstOfAppliances.SelectionChanged
+
 
     End Sub
 
@@ -310,6 +323,7 @@ Public Class Form1
             Dim fileStream As System.IO.Stream = SaveFileDialog1.OpenFile()
             Dim sw As New System.IO.StreamWriter(fileStream)
 
+
             For Each row As DataGridViewRow In Me.lstOfAppliances.Rows
                 Dim line As String = String.Empty
                 For x As Integer = 0 To row.Cells.Count - 1
@@ -317,6 +331,8 @@ Public Class Form1
                 Next
                 sw.WriteLine(line.Remove(line.Length - 1, 1))
             Next
+
+
             sw.Flush()
             sw.Close()
         End If
@@ -327,6 +343,48 @@ Public Class Form1
         Dim openFileDialog As OpenFileDialog = New System.Windows.Forms.OpenFileDialog
 
         If (openFileDialog.ShowDialog() = DialogResult.OK) Then
+            Dim sr As New System.IO.StreamReader(openFileDialog.FileName)
+            Dim line As String
+
+            lstOfAppliances.DataSource = Nothing
+            Dim i = 0
+
+            While i < lstOfAppliances.Rows.Count
+                lstOfAppliances.Rows.RemoveAt(i)
+            End While
+
+            listOfAppliances.Clear()
+
+            Do
+                line = sr.ReadLine()
+                If Not (line Is Nothing) Then
+                    Console.WriteLine(line)
+                    Dim values As Array
+                    values = Split(line, ",")
+
+                    'Create the newAppliance that we load from the text file'
+                    newAppliance.nameOfAppliance = values(0)
+                    newAppliance.hoursUsedAppliance = values(1)
+                    newAppliance.costOfAppliance = values(2)
+                    newAppliance.costKiloWatt = values(3)
+                    newAppliance.power = values(4)
+
+
+                    'Add the new appliance to the list'
+                    listOfAppliances.Add(newAppliance)
+
+                End If
+            Loop Until line Is Nothing
+
+            'MessageBox.Show(sr.ReadToEnd)'
+            sr.Close()
+
+
+
+            For index As Integer = 0 To listOfAppliances.Count - 1
+                lstOfAppliances.Rows.Add(listOfAppliances(index).nameOfAppliance, listOfAppliances(index).hoursUsedAppliance, listOfAppliances(index).costKiloWatt, listOfAppliances(index).power, listOfAppliances(index).costOfAppliance)
+                totalCost = totalCost + listOfAppliances(index).costOfAppliance
+            Next
 
         End If
 

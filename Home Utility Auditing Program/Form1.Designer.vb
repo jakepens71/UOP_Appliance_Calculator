@@ -36,12 +36,14 @@ Partial Class Form1
         Me.txtPricePerGallon = New System.Windows.Forms.TextBox()
         Me.lblPricePerGallon = New System.Windows.Forms.Label()
         Me.lstOfAppliances = New System.Windows.Forms.DataGridView()
-        Me.ApplianceName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.HoursUsed = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CostAppliance = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.btnLoad = New System.Windows.Forms.Button()
+        Me.ApplianceName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.HoursUsed = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CostPerKiloHour = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Power = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CostAppliance = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.lstOfAppliances, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -161,11 +163,39 @@ Partial Class Form1
         Me.lstOfAppliances.AllowUserToAddRows = False
         Me.lstOfAppliances.AllowUserToDeleteRows = False
         Me.lstOfAppliances.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.lstOfAppliances.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ApplianceName, Me.HoursUsed, Me.CostAppliance})
-        Me.lstOfAppliances.Location = New System.Drawing.Point(176, 277)
+        Me.lstOfAppliances.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ApplianceName, Me.HoursUsed, Me.CostPerKiloHour, Me.Power, Me.CostAppliance})
+        Me.lstOfAppliances.Location = New System.Drawing.Point(12, 260)
+        Me.lstOfAppliances.MultiSelect = False
         Me.lstOfAppliances.Name = "lstOfAppliances"
-        Me.lstOfAppliances.Size = New System.Drawing.Size(350, 150)
+        Me.lstOfAppliances.Size = New System.Drawing.Size(651, 150)
         Me.lstOfAppliances.TabIndex = 14
+        '
+        'btnClear
+        '
+        Me.btnClear.Location = New System.Drawing.Point(698, 277)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(75, 23)
+        Me.btnClear.TabIndex = 15
+        Me.btnClear.Text = "Clear"
+        Me.btnClear.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(698, 333)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 16
+        Me.Button1.Text = "Export"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'btnLoad
+        '
+        Me.btnLoad.Location = New System.Drawing.Point(698, 387)
+        Me.btnLoad.Name = "btnLoad"
+        Me.btnLoad.Size = New System.Drawing.Size(75, 23)
+        Me.btnLoad.TabIndex = 17
+        Me.btnLoad.Text = "Load"
+        Me.btnLoad.UseVisualStyleBackColor = True
         '
         'ApplianceName
         '
@@ -177,37 +207,20 @@ Partial Class Form1
         Me.HoursUsed.HeaderText = "Hours Used"
         Me.HoursUsed.Name = "HoursUsed"
         '
+        'CostPerKiloHour
+        '
+        Me.CostPerKiloHour.HeaderText = "Cost /  kWh"
+        Me.CostPerKiloHour.Name = "CostPerKiloHour"
+        '
+        'Power
+        '
+        Me.Power.HeaderText = "Power"
+        Me.Power.Name = "Power"
+        '
         'CostAppliance
         '
         Me.CostAppliance.HeaderText = "Cost"
         Me.CostAppliance.Name = "CostAppliance"
-        '
-        'btnClear
-        '
-        Me.btnClear.Location = New System.Drawing.Point(544, 277)
-        Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(75, 23)
-        Me.btnClear.TabIndex = 15
-        Me.btnClear.Text = "Clear"
-        Me.btnClear.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(544, 333)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 16
-        Me.Button1.Text = "Export"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'btnLoad
-        '
-        Me.btnLoad.Location = New System.Drawing.Point(544, 387)
-        Me.btnLoad.Name = "btnLoad"
-        Me.btnLoad.Size = New System.Drawing.Size(75, 23)
-        Me.btnLoad.TabIndex = 17
-        Me.btnLoad.Text = "Load"
-        Me.btnLoad.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -252,10 +265,12 @@ Partial Class Form1
     Friend WithEvents txtPricePerGallon As TextBox
     Friend WithEvents lblPricePerGallon As Label
     Friend WithEvents lstOfAppliances As DataGridView
-    Friend WithEvents ApplianceName As DataGridViewTextBoxColumn
-    Friend WithEvents HoursUsed As DataGridViewTextBoxColumn
-    Friend WithEvents CostAppliance As DataGridViewTextBoxColumn
     Friend WithEvents btnClear As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents btnLoad As Button
+    Friend WithEvents ApplianceName As DataGridViewTextBoxColumn
+    Friend WithEvents HoursUsed As DataGridViewTextBoxColumn
+    Friend WithEvents CostPerKiloHour As DataGridViewTextBoxColumn
+    Friend WithEvents Power As DataGridViewTextBoxColumn
+    Friend WithEvents CostAppliance As DataGridViewTextBoxColumn
 End Class
